@@ -1,11 +1,16 @@
 <template>
     <div class="container">
         <SearchBar @termChange="onTermChange"></SearchBar>
-        <VideoList 
-            @videoSelect="onVideoSelect"
-            :videos= "videos"
-        ></VideoList>
-        <VideoDetail></VideoDetail>
+        
+        <div class="row">    
+            <VideoDetail
+                :video="selectedVideo"
+            ></VideoDetail>
+            <VideoList 
+                @videoSelect="onVideoSelect"
+                :videos= "videos"
+            ></VideoList>
+        </div>
     </div>            
 </template>
 
@@ -28,7 +33,8 @@
         data() {
             return {
                 videos: [],
-                test: ''
+                test: '',
+                selectedVideo: null,
             }
         },
         methods: {
@@ -45,8 +51,7 @@
                     });
             },
             onVideoSelect(video) {
-                this.test = video.snippet.title;
-                console.log("It worked !")
+                this.selectedVideo = video;
             }
         }
     }

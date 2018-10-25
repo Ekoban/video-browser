@@ -35,6 +35,6 @@ export default {
         cursor: pointer;
     }
     li:hover {
-        background-color:darkgrey;
+        background-color: #ddd;
     }    
 </style>
