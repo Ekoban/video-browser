@@ -1,8 +1,8 @@
-import Vue from 'vue'
-import App from './App.vue'
+import Vue from 'vue';
+import App from './App';
 
-Vue.config.productionTip = false
+new Vue ({
+    el:'#app', // slight difference with Vue-CLI boilerplate (.$mount)
+    render: h => h(App)
+})
 
-new Vue({
-  render: h => h(App)
-}).$mount('#app')
