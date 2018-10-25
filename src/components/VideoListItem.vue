@@ -1,13 +1,10 @@
 <template>
-    <div>
-        <li @click="onVideoSelect" class="list-group-item media">
-            <img class="mr-3" :src="thumbnailUrl" />
-            <div class="media-body"> 
-                {{ videoTitle }} 
-            </div>
-        </li>
-    </div>
-
+    <li class="list-group-item media" @click="onVideoSelect">
+        <img class="mr-3" :src="thumbnailUrl" />
+        <div class="media-body">
+            {{ videoTitle }}
+        </div>
+    </li>
 </template>
 
 <script>
@@ -21,16 +18,15 @@ export default {
         videoTitle() {
             return this.video.snippet.title
         },
+    },
     methods: {
         onVideoSelect() {
             this.$emit('videoSelect', this.video);
             console.log("First emit !")
+            }
         }
-    }
-    
-    }
-
 }
+
 </script>
 
 <style scoped>

@@ -1,6 +1,7 @@
 <template>
     <div class="container">
         <SearchBar @termChange="onTermChange"></SearchBar>
+        <div> {{ test }} </div>
         <VideoList 
             @videoSelect="onVideoSelect"
             :videos= "videos"
@@ -24,6 +25,7 @@
         data() {
             return {
                 videos: [],
+                test: ''
 
             }
         },
@@ -41,6 +43,7 @@
                     });
             },
             onVideoSelect(video) {
+                this.test = video.snippet.title;
                 console.log("It worked !")
             }
         }
