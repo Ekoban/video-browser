@@ -23,9 +23,9 @@ export default {
         onVideoSelect() {
             this.$emit('videoSelect', this.video);
             console.log("First emit !")
-            }
         }
-}
+    }
+};
 
 </script>
 
